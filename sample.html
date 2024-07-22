@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Send Transaction</title>
+  </head>
+  <body>
+    <h1>Send Transaction</h1>
+    <form id="transactionForm">
+      <label for="recipientAddress">Recipient Address:</label>
+      <input type="text" id="recipientAddress" required /><br /><br />
+
+      <label for="amount">Amount (TFUEL):</label>
+      <input type="number" id="amount" required /><br /><br />
+
+      <label for="categorySelect">Category:</label>
+      <select id="categorySelect">
+        <option value="Private">Private</option>
+        <option value="Income & Earnings">Income & Earnings</option>
+        <option value="Expenses & Payments">Expenses & Payments</option>
+        <option value="Transfers & Transactions">
+          Transfers & Transactions
+        </option>
+        <option value="Investments & Savings">Investments & Savings</option>
+        <option value="Adjustments & Penalties">
+          Adjustments & Penalties
+        </option></select
+      ><br /><br />
+
+      <button type="button" onclick="sendTransactionData()">
+        Send Data to Extension
+      </button>
+    </form>
+
+    <script>
+      // function sendTransactionData() {
+      //   const recipientAddress =
+      //     document.getElementById("recipientAddress").value;
+      //   const amount = document.getElementById("amount").value;
+      //   const category = document.getElementById("categorySelect").value;
+
+      //   // Replace 'your_extension_id' with your actual Chrome Extension ID
+      //   chrome.runtime.sendMessage(
+      //     "hopcimlcdlmdpgaojmibhkcfieepmaic",
+      //     {
+      //       recipientAddress: recipientAddress,
+      //       amount: amount,
+      //       category: category,
+      //     },
+      //     function (response) {
+      //       console.log("Response from extension:", response);
+      //     }
+      //   );
+      // }
+      function sendTransactionData() {
+        const recipientAddress =
+          document.getElementById("recipientAddress").value;
+        const amount = document.getElementById("amount").value;
+        const category = document.getElementById("categorySelect").value;
+
+        chrome.runtime.sendMessage(
+          "hopcimlcdlmdpgaojmibhkcfieepmaic",
+          {
+            action: "openPopupAndPrefill", // This must match what the background script expects
+            data: { recipientAddress, amount, category },
+          },
+          function (response) {
+            console.log("Response from extension:", response);
+          }
+        );
+      }
+    </script>
+  </body>
+</html>

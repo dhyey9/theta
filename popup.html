@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theta Wallet Extension</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="networkSelection">
+        <label for="networkSelect">Select Network:</label>
+        <select id="networkSelect">
+          <option value="ethereum">Theta Testnet (Mainnet)</option>
+          <option value="binance">Theta Mainnet (Binance)</option>
+          <option value="polygon">Polygon</option>
+        </select>
+      </div>
+    </header>
+    <div id="initialSection">
+      <h2>Theta Wallet</h2>
+      <button id="createWalletBtn">Create New Wallet</button>
+      <button id="importWalletBtn">Import Existing Wallet</button>
+    </div>
+
+    <div id="createSection" style="display: none">
+      <h2>New Wallet Created</h2>
+      <p><strong> Address: </strong><span id="newWalletAddress"></span></p>
+      <p><strong></strong> Key: <span id="newWalletPrivateKey"></span></p>
+      <button id="saveNewWalletBtn">Save and Continue</button>
+    </div>
+
+    <div id="importSection" style="display: none">
+      <h2>Import Wallet</h2>
+      <input type="text" id="privateKeyInput" placeholder="Enter Private Key" />
+      <button id="loginBtn">Import and Login</button>
+    </div>
+
+    <div id="walletSection" style="display: none">
+      <h2>Wallet Details</h2>
+      <p><strong>Public Address: </strong> <span id="walletAddress"></span></p>
+      <p><strong>Balance:</strong> <span id="walletBalance"></span> TFUEL</p>
+
+      <h3>Send Transaction</h3>
+      <input
+        type="text"
+        id="recipientAddress"
+        placeholder="Recipient Address"
+      />
+      <input type="number" id="amount" placeholder="Amount (TFUEL)" />
+      <h3>Select Category (Optional)</h3>
+      <select id="categorySelect">
+        <option value="Private">Private</option>
+        <option value="Income & Earnings">Income & Earnings</option>
+        <option value="Expenses & Payments">Expenses & Payments</option>
+        <option value="Transfers & Transactions">
+          Transfers & Transactions
+        </option>
+        <option value="Investments & Savings">Investments & Savings</option>
+        <option value="Adjustments & Penalties">Adjustments & Penalties</option>
+      </select>
+      <p class="space"></p>
+      <!--Loader-->
+      <div id="center" class="center">
+        <div class="loader">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <div class="bar4"></div>
+          <div class="bar5"></div>
+          <div class="bar6"></div>
+          <div class="bar7"></div>
+          <div class="bar8"></div>
+          <div class="bar9"></div>
+          <div class="bar10"></div>
+          <div class="bar11"></div>
+          <div class="bar12"></div>
+        </div>
+      </div>
+      <p class="space"></p>
+      <!--Loader-->
+
+      <button id="sendBtn">Send</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <script src="./ethers.js"></script>
+    <script src="./popup.js"></script>
+  </body>
+</html>

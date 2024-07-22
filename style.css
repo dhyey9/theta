@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  width: 300px;
+  background-color: #f0f0f0; /* Light background to make the buttons stand out */
+}
+
+input,
+button,
+textarea,
+select {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Increased font size for better readability */
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+button {
+  background-color: #fcd022; /* Default green color for buttons */
+  color: rgb(56, 54, 54);
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Specific button styles */
+#sendButton {
+  background-color: rgb(255, 208, 29); /* Yellow color */
+  border-radius: 50%; /* Make it round */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px; /* Increase font size for better visibility */
+}
+
+#logoutBtn {
+  background-color: rgb(29, 87, 191);
+  color: rgb(249, 243, 243); /* Blue color */
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#logoutBtn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#importWalletBtn {
+  background-color: rgb(29, 87, 191);
+  color: rgb(249, 243, 243); /* Blue color */
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#importWalletBtn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+.loader {
+  display: none;
+  position: relative;
+  width: 54px;
+  height: 54px;
+  border-radius: 10px;
+}
+
+.loader div {
+  width: 8%;
+  height: 24%;
+  background: rgb(0, 123, 255);
+  border: 2px solid rgb(255, 255, 255);
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  opacity: 0;
+  border-radius: 50px;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
+  animation: fade458 1s linear infinite;
+}
+
+@keyframes fade458 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.loader .bar1 {
+  transform: rotate(0deg) translate(0, -130%);
+  animation-delay: 0s;
+}
+
+.loader .bar2 {
+  transform: rotate(30deg) translate(0, -130%);
+  animation-delay: -1.1s;
+}
+
+.loader .bar3 {
+  transform: rotate(60deg) translate(0, -130%);
+  animation-delay: -1s;
+}
+
+.loader .bar4 {
+  transform: rotate(90deg) translate(0, -130%);
+  animation-delay: -0.9s;
+}
+
+.loader .bar5 {
+  transform: rotate(120deg) translate(0, -130%);
+  animation-delay: -0.8s;
+}
+
+.loader .bar6 {
+  transform: rotate(150deg) translate(0, -130%);
+  animation-delay: -0.7s;
+}
+
+.loader .bar7 {
+  transform: rotate(180deg) translate(0, -130%);
+  animation-delay: -0.6s;
+}
+
+.loader .bar8 {
+  transform: rotate(210deg) translate(0, -130%);
+  animation-delay: -0.5s;
+}
+
+.loader .bar9 {
+  transform: rotate(240deg) translate(0, -130%);
+  animation-delay: -0.4s;
+}
+
+.loader .bar10 {
+  transform: rotate(270deg) translate(0, -130%);
+  animation-delay: -0.3s;
+}
+
+.loader .bar11 {
+  transform: rotate(300deg) translate(0, -130%);
+  animation-delay: -0.2s;
+}
+
+.loader .bar12 {
+  transform: rotate(330deg) translate(0, -130%);
+  animation-delay: -0.1s;
+}
